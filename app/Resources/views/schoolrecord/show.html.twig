@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Schoolrecord</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Schoolname</th>
+                <td>{{ schoolRecord.schoolName }}</td>
+            </tr>
+            <tr>
+                <th>Phonenumber</th>
+                <td>{{ schoolRecord.phoneNumber }}</td>
+            </tr>
+            <tr>
+                <th>District</th>
+                <td>{{ schoolRecord.district }}</td>
+            </tr>
+            <tr>
+                <th>Gramaniladhari</th>
+                <td>{{ schoolRecord.gramaNiladhari }}</td>
+            </tr>
+            <tr>
+                <th>Divisionalsecretariat</th>
+                <td>{{ schoolRecord.divisionalSecretariat }}</td>
+            </tr>
+            <tr>
+                <th>Haveelectricity</th>
+                <td>{% if schoolRecord.haveElectricity %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Havelab</th>
+                <td>{% if schoolRecord.haveLab %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Numberofteacher</th>
+                <td>{{ schoolRecord.numberOfTeacher }}</td>
+            </tr>
+            <tr>
+                <th>Numberofcomputer</th>
+                <td>{{ schoolRecord.numberOfComputer }}</td>
+            </tr>
+            <tr>
+                <th>Numberofworking</th>
+                <td>{{ schoolRecord.numberOfWorking }}</td>
+            </tr>
+            <tr>
+                <th>Lackcomputerparts</th>
+                <td>{{ schoolRecord.lackComputerParts }}</td>
+            </tr>
+            <tr>
+                <th>Noofstudents</th>
+                <td>{{ schoolRecord.noOfStudents }}</td>
+            </tr>
+            <tr>
+                <th>Langitude</th>
+                <td>{{ schoolRecord.langitude }}</td>
+            </tr>
+            <tr>
+                <th>Latitude</th>
+                <td>{{ schoolRecord.latitude }}</td>
+            </tr>
+            <tr>
+                <th>Proposals</th>
+                <td>{{ schoolRecord.proposals }}</td>
+            </tr>
+            <tr>
+                <th>Providedby</th>
+                <td>{{ schoolRecord.providedBy }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ schoolRecord.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('schoolrecord_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('schoolrecord_edit', { 'id': schoolRecord.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Schoolrecords list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Schoolname</th>
+                <th>Phonenumber</th>
+                <th>District</th>
+                <th>Gramaniladhari</th>
+                <th>Divisionalsecretariat</th>
+                <th>Haveelectricity</th>
+                <th>Havelab</th>
+                <th>Numberofteacher</th>
+                <th>Numberofcomputer</th>
+                <th>Numberofworking</th>
+                <th>Lackcomputerparts</th>
+                <th>Noofstudents</th>
+                <th>Langitude</th>
+                <th>Latitude</th>
+                <th>Proposals</th>
+                <th>Providedby</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for schoolRecord in schoolRecords %}
+            <tr>
+                <td><a href="{{ path('schoolrecord_show', { 'id': schoolRecord.id }) }}">{{ schoolRecord.schoolName }}</a></td>
+                <td>{{ schoolRecord.phoneNumber }}</td>
+                <td>{{ schoolRecord.district }}</td>
+                <td>{{ schoolRecord.gramaNiladhari }}</td>
+                <td>{{ schoolRecord.divisionalSecretariat }}</td>
+                <td>{% if schoolRecord.haveElectricity %}Yes{% else %}No{% endif %}</td>
+                <td>{% if schoolRecord.haveLab %}Yes{% else %}No{% endif %}</td>
+                <td>{{ schoolRecord.numberOfTeacher }}</td>
+                <td>{{ schoolRecord.numberOfComputer }}</td>
+                <td>{{ schoolRecord.numberOfWorking }}</td>
+                <td>{{ schoolRecord.lackComputerParts }}</td>
+                <td>{{ schoolRecord.noOfStudents }}</td>
+                <td>{{ schoolRecord.langitude }}</td>
+                <td>{{ schoolRecord.latitude }}</td>
+                <td>{{ schoolRecord.proposals }}</td>
+                <td>{{ schoolRecord.providedBy }}</td>
+                <td>{{ schoolRecord.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('schoolrecord_show', { 'id': schoolRecord.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('schoolrecord_edit', { 'id': schoolRecord.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('schoolrecord_new') }}">Create a new schoolRecord</a>
+        </li>
+    </ul>
+{% endblock %}
