@@ -28,7 +28,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/AppBundle/Entity/District.php">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/AppBundle/Entity/SchoolRecord.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/AppBundle/Form/SchoolRecordType.php">
           <value>
             <set />
           </value>

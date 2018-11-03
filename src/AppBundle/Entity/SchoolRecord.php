@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\JoinColumn;
 
 /**
  * SchoolRecord
@@ -27,10 +29,13 @@ class SchoolRecord
     private $phoneNumber;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="district", type="string", length=50, nullable=false)
+     * @ORM\Column(name="district", type="integer", length=50, nullable=false)
+     * @ManyToOne(targetEntity="District")
+     * @JoinColumn(name="district", referencedColumnName="id")
      */
+
     private $district;
 
     /**
