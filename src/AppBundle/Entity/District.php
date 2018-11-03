@@ -19,7 +19,6 @@ class District
      */
     private $name;
 
-
     /**
      * @var integer
      *
@@ -59,6 +58,11 @@ class District
     public function setName($name)
     {
         $this->name = $name;
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 
 

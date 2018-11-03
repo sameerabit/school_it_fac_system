@@ -42,7 +42,6 @@ class SchoolRecordController extends Controller
         $schoolRecord = new Schoolrecord();
         $form = $this->createForm('AppBundle\Form\SchoolRecordType', $schoolRecord);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($schoolRecord);

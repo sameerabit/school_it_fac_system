@@ -24,6 +24,14 @@ class SchoolRecord
     /**
      * @var string
      *
+     * @ORM\Column(name="address", type="string", length=500, nullable=true)
+     */
+    private $address;
+
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="phone_number", type="string", length=15, nullable=false)
      */
     private $phoneNumber;
@@ -31,7 +39,6 @@ class SchoolRecord
     /**
      * @var integer
      *
-     * @ORM\Column(name="district", type="integer", length=50, nullable=false)
      * @ManyToOne(targetEntity="District")
      * @JoinColumn(name="district", referencedColumnName="id")
      */
@@ -41,14 +48,14 @@ class SchoolRecord
     /**
      * @var string
      *
-     * @ORM\Column(name="grama_niladhari", type="string", length=500, nullable=false)
+     * @ORM\Column(name="grama_niladhari", type="string", length=500, nullable=true)
      */
     private $gramaNiladhari;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="divisional_secretariat", type="string", length=500, nullable=false)
+     * @ORM\Column(name="divisional_secretariat", type="string", length=500, nullable=true)
      */
     private $divisionalSecretariat;
 
@@ -62,70 +69,70 @@ class SchoolRecord
     /**
      * @var boolean
      *
-     * @ORM\Column(name="have_lab", type="boolean", nullable=false)
+     * @ORM\Column(name="have_lab", type="boolean", nullable=true)
      */
     private $haveLab;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="number_of_teacher", type="integer", nullable=false)
+     * @ORM\Column(name="number_of_teacher", type="integer", nullable=true)
      */
     private $numberOfTeacher;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="number_of_computer", type="integer", nullable=false)
+     * @ORM\Column(name="number_of_computer", type="integer", nullable=true)
      */
     private $numberOfComputer;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="number_of_working", type="integer", nullable=false)
+     * @ORM\Column(name="number_of_working", type="integer", nullable=true)
      */
     private $numberOfWorking;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lack_computer_parts", type="text", length=65535, nullable=false)
+     * @ORM\Column(name="lack_computer_parts", type="text", length=65535, nullable=true)
      */
     private $lackComputerParts;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="no_of_students", type="integer", nullable=false)
+     * @ORM\Column(name="no_of_students", type="integer", nullable=true)
      */
     private $noOfStudents;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="langitude", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="langitude", type="float", precision=10, scale=0, nullable=true)
      */
     private $langitude;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="latitude", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="latitude", type="float", precision=10, scale=0, nullable=true)
      */
     private $latitude;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="proposals", type="text", length=65535, nullable=false)
+     * @ORM\Column(name="proposals", type="text", length=65535, nullable=true)
      */
     private $proposals;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="provided_by", type="string", length=500, nullable=false)
+     * @ORM\Column(name="provided_by", type="string", length=500, nullable=true)
      */
     private $providedBy;
 
@@ -137,6 +144,24 @@ class SchoolRecord
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
+
+    /**
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param string $address
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+    }
+
+
 
     /**
      * @return string
