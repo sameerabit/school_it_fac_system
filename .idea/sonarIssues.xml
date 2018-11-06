@@ -23,12 +23,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/Resources/views/schoolrecord/index.html.twig">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/Resources/views/schoolrecord/new.html.twig">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/config/parameters.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/composer.json">
           <value>
             <set />
           </value>

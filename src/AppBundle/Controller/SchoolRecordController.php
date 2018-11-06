@@ -5,6 +5,8 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\SchoolRecord;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 /**
  * Schoolrecord controller.
